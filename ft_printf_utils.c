@@ -6,18 +6,19 @@
 /*   By: lkiloul <lkiloul@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 13:36:31 by lkiloul           #+#    #+#             */
-/*   Updated: 2024/11/04 08:07:03 by lkiloul          ###   ########.fr       */
+/*   Updated: 2024/11/11 16:36:38 by lkiloul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
+	return (1);
 }
 
-void	ft_putstr(char *s)
+int	ft_putstr(char *s)
 {
 	int	i;
 
@@ -27,23 +28,24 @@ void	ft_putstr(char *s)
 		ft_putchar(s[i]);
 		i++;
 	}
+	return (i + 1);
 }
 
-size_t ft_putnbr(int n)
+size_t ft_putnbr(int n, int count)
 {
 	size_t i;
 
 	i = 0;
 	if (n < 0)
 	{
-		ft_putchar('-');
+		count += ft_putchar('-');
 		i++;
 		n = -n;
 	}
 	if (n >= 10)
 	{
-		i += ft_putnbr(n / 10);
-		i += ft_putnbr(n % 10);
+		i += ft_putnbr(n / 10, count);
+		i += ft_putnbr(n % 10, count);
 	}
 	else
 	{
@@ -53,19 +55,33 @@ size_t ft_putnbr(int n)
 	return (i);
 }
 
-void ft_adress(unsigned long n)
+int ft_address(unsigned long n, int addprefix, int count)
 {
-	char	*base;
+    char	*base;
+    size_t	i;
 
-	base = "0123456789abcdef";
-	if (n >= 16)
-	{
-		ft_adress(n / 16);
-		ft_adress(n % 16);
-	}
-	else
-		ft_putchar(base[n]);
-
+    base = "0123456789abcdef";
+    i = 0;
+    if (addprefix)
+    {
+        count += ft_putstr("0x");
+        i += 2;
+    }
+    if (n == 0)
+    {
+        count += ft_putchar('0');
+        i++;
+    }
+    else
+    {
+        if (n >= 16)
+        {
+            i += ft_address(n / 16, 0, count);
+        }
+        count += ft_putchar(base[n % 16]);
+        i++;
+    }
+    return (count);
 }
 
 void	ft_putnbr_unsigned(unsigned int n)
