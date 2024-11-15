@@ -6,7 +6,7 @@
 /*   By: lkiloul <lkiloul@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 13:36:31 by lkiloul           #+#    #+#             */
-/*   Updated: 2024/11/14 14:42:05 by lkiloul          ###   ########.fr       */
+/*   Updated: 2024/11/15 14:18:12 by lkiloul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,8 @@ size_t	ft_putnbr(int n)
 int	ft_address(unsigned long n, int addprefix, int count)
 {
 	char	*base;
-	size_t	i;
 
 	base = "0123456789abcdef";
-	i = 0;
 	count = 0;
 	if (addprefix)
 		count += ft_putstr("0x");
