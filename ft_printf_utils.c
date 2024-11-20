@@ -6,11 +6,11 @@
 /*   By: lkiloul <lkiloul@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 13:36:31 by lkiloul           #+#    #+#             */
-/*   Updated: 2024/11/15 14:18:12 by lkiloul          ###   ########.fr       */
+/*   Updated: 2024/11/20 13:37:42 by lkiloul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_putchar(char c)
 {
