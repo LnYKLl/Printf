@@ -6,11 +6,11 @@
 /*   By: lkiloul <lkiloul@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 08:10:37 by lkiloul           #+#    #+#             */
-/*   Updated: 2024/11/20 13:37:52 by lkiloul          ###   ########.fr       */
+/*   Updated: 2024/11/22 12:55:15 by lkiloul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 int	ft_putnbr_hex(unsigned int n, int uppercase)
 {

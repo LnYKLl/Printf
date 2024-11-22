@@ -6,11 +6,11 @@
 /*   By: lkiloul <lkiloul@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 15:12:21 by lkiloul           #+#    #+#             */
-/*   Updated: 2024/11/20 13:36:52 by lkiloul          ###   ########.fr       */
+/*   Updated: 2024/11/22 12:55:02 by lkiloul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 static int	ft_format(char c, va_list args)
 {
